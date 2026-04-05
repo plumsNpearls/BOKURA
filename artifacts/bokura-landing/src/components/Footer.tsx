@@ -4,9 +4,18 @@ export function Footer() {
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
           <div className="sm:col-span-2">
-            <span className="text-2xl sm:text-3xl font-display font-bold tracking-wider text-white mb-3 block">
-              BOKURA<span className="text-primary">.</span>
-            </span>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="h-12 w-12 rounded-full overflow-hidden ring-1 ring-secondary/50 shadow-[0_0_12px_rgba(212,160,23,0.4)] shrink-0">
+                <img
+                  src="/bokura-logo.png"
+                  alt="BOKURA Logo"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <span className="text-2xl sm:text-3xl font-display font-bold tracking-wider text-white">
+                BOKURA<span className="text-primary">.</span>
+              </span>
+            </div>
             <p className="text-gray-400 max-w-xs text-sm leading-relaxed mb-4">
               Premium accounting, bookkeeping, and financial advisory services tailored for Dubai's modern enterprises and GCC businesses.
             </p>
