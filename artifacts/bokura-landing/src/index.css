@@ -180,6 +180,47 @@ html[dir="rtl"] .font-display {
     100% { box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 14px rgba(248,113,113,0.2), inset 0 1px 0 rgba(248,113,113,0.1); }
   }
 
+  /* ── Navbar specific ───────────────────────────────────────── */
+  @keyframes navBorderPulse {
+    0%,100% {
+      border-color: rgba(0,212,255,0.18);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.55),
+                  0 0 0   rgba(0,212,255,0),
+                  inset 0 1px 0 rgba(0,212,255,0.08);
+    }
+    50% {
+      border-color: rgba(0,212,255,0.52);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.65),
+                  0 0 28px rgba(0,212,255,0.18),
+                  inset 0 1px 0 rgba(0,212,255,0.22);
+    }
+  }
+
+  @keyframes navScanBeam {
+    0%   { transform: translateX(-120%); opacity: 0; }
+    4%   { opacity: 1; }
+    28%  { transform: translateX(120%);  opacity: 0; }
+    29%,100% { transform: translateX(-120%); opacity: 0; }
+  }
+
+  @keyframes logoRingPulse {
+    0%,100% { box-shadow: 0 0 14px rgba(212,160,23,0.4),  0 0 28px rgba(212,160,23,0.12); }
+    50%     { box-shadow: 0 0 26px rgba(212,160,23,0.75), 0 0 52px rgba(212,160,23,0.28); }
+  }
+
+  @keyframes navLinkUnderlineGlow {
+    0%,100% { box-shadow: none; opacity: 0.8; }
+    50%     { box-shadow: 0 1px 8px rgba(0,212,255,0.7); opacity: 1; }
+  }
+
+  .navbar-scrolled {
+    animation: navBorderPulse 3.5s ease-in-out infinite;
+  }
+
+  .logo-ring-animated {
+    animation: logoRingPulse 3s ease-in-out infinite;
+  }
+
   .liquid-glass {
     background: rgba(10, 10, 20, 0.45);
     backdrop-filter: blur(20px) saturate(180%);
