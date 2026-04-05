@@ -110,7 +110,7 @@ export const translations = {
       label: "About BOKURA",
       title: "Your Accounting & Audit Office",
       titleGradient: "in Deira, Dubai",
-      desc1: "We are a full-service Accounting & Audit Office based in Deira, Dubai, providing comprehensive financial and business support services for companies across the UAE.",
+      desc1: "BOKURA is a Deira-based Accounting & Audit Office specialising in the complete financial backbone of UAE businesses — from daily bookkeeping and VAT compliance to corporate tax filing and investor-ready financial reporting.",
       desc2: "Our team handles a full range of accounting and compliance requirements — from daily bookkeeping and VAT filing to corporate tax and financial reporting — allowing businesses to focus on growth while we manage the numbers.",
       stats: [
         { value: "Deira", label: "Dubai HQ" },
@@ -201,7 +201,7 @@ export const translations = {
       cta: "Inquire Now — It's Free",
     },
     footer: {
-      description: "Accounting & Audit Office based in Deira, Dubai — delivering comprehensive financial and business support services for companies across the UAE.",
+      description: "Dubai's trusted Accounting & Audit Office in Deira — precision bookkeeping, VAT compliance, and corporate tax expertise for UAE and GCC businesses.",
       accepting: "Currently accepting new clients",
       contact: "Contact",
       quickLinks: "Quick Links",
@@ -340,7 +340,7 @@ export const translations = {
       label: "عن بوكورا",
       title: "مكتبك للمحاسبة والتدقيق",
       titleGradient: "في ديرة، دبي",
-      desc1: "نحن مكتب محاسبة وتدقيق متكامل مقره ديرة، دبي، نقدم خدمات مالية وتجارية شاملة لشركات في جميع أنحاء الإمارات.",
+      desc1: "بوكورا مكتب محاسبة وتدقيق متخصص في ديرة، دبي، يُعنى بإدارة العمود المالي الكامل للشركات في الإمارات — من دفاتر الحسابات اليومية والامتثال لضريبة القيمة المضافة إلى إيداع ضريبة الشركات وإعداد التقارير المالية الاحترافية.",
       desc2: "يتولى فريقنا كامل متطلبات المحاسبة والامتثال — من المحاسبة اليومية وإيداع ضريبة القيمة المضافة إلى ضريبة الشركات والتقارير المالية — لتتفرغ أعمالك للنمو بينما نتولى الأرقام.",
       stats: [
         { value: "ديرة", label: "المقر في دبي" },
@@ -431,7 +431,7 @@ export const translations = {
       cta: "تواصل الآن — مجاناً",
     },
     footer: {
-      description: "مكتب محاسبة وتدقيق مقره ديرة، دبي — يقدم خدمات مالية وتجارية شاملة للشركات في جميع أنحاء الإمارات.",
+      description: "مكتب المحاسبة والتدقيق الموثوق في ديرة، دبي — دقة في المحاسبة وضريبة القيمة المضافة وضريبة الشركات لدعم الأعمال في الإمارات والخليج.",
       accepting: "نقبل عملاء جدداً حالياً",
       contact: "تواصل معنا",
       quickLinks: "روابط سريعة",
