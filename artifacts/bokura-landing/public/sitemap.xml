@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://attached-assets-techedubyte.replit.app/</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <!-- Bilingual hreflang alternates -->
     <xhtml:link rel="alternate" hreflang="en-ae" href="https://attached-assets-techedubyte.replit.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar-ae" href="https://attached-assets-techedubyte.replit.app/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://attached-assets-techedubyte.replit.app/"/>
+    <!-- Logo image for image sitemap -->
+    <image:image>
+      <image:loc>https://attached-assets-techedubyte.replit.app/bokura-logo.png</image:loc>
+      <image:title>BOKURA Accounting and Bookkeeping L.L.C — Deira, Dubai</image:title>
+      <image:caption>BOKURA — Full-service accounting and audit office in Deira, Dubai</image:caption>
+    </image:image>
   </url>
 </urlset>
