@@ -73,7 +73,7 @@ export function Hero({ onOpenModal }: { onOpenModal: () => void }) {
             transition={{ duration: 1, delay: 0.8 }}
             className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center items-center gap-3 sm:gap-x-8 sm:gap-y-4 text-xs sm:text-sm font-medium text-gray-400"
           >
-            {["UAE VAT Compliant", "FTA Ready", "Trusted in Dubai & GCC", "ISO-Standard Processes"].map((badge) => (
+            {["UAE VAT Compliant", "FTA Ready", "Corporate Tax Filing", "Third Party Inventory"].map((badge) => (
               <div key={badge} className="flex items-center justify-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-secondary shrink-0" />
                 {badge}
