@@ -1,19 +1,20 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 export function FloatingCTA({ onOpenModal }: { onOpenModal: () => void }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1, duration: 0.5 }}
-      className="fixed bottom-6 right-6 z-50 md:hidden"
+      initial={{ opacity: 0, y: 60, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ delay: 1.5, duration: 0.6, type: "spring", stiffness: 200 }}
+      className="fixed bottom-5 right-5 z-50 md:hidden"
     >
       <button
         onClick={onOpenModal}
-        className="bg-primary text-black font-semibold px-6 py-3 rounded-full shadow-[0_0_20px_rgba(0,212,255,0.5)] hover:shadow-[0_0_30px_rgba(0,212,255,0.8)] transition-all"
+        data-testid="button-floating-cta"
+        className="relative bg-primary text-black font-bold px-5 py-3 rounded-full text-sm shadow-[0_0_24px_rgba(0,212,255,0.6)] hover:shadow-[0_0_36px_rgba(0,212,255,0.9)] active:scale-95 transition-all duration-200 flex items-center gap-2"
       >
-        Free Health Check
+        <span className="w-2 h-2 rounded-full bg-black/60 animate-ping absolute left-3 top-1/2 -translate-y-1/2" />
+        <span className="ml-2">Free Health Check</span>
       </button>
     </motion.div>
   );
