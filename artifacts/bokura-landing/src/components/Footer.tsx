@@ -1,4 +1,8 @@
+import { useLanguage } from "@/context/LanguageContext";
+
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="relative z-10 border-t border-white/10 bg-black/80 backdrop-blur-xl pt-12 sm:pt-16 pb-8">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
@@ -17,16 +21,16 @@ export function Footer() {
               </span>
             </div>
             <p className="text-gray-400 max-w-xs text-sm leading-relaxed mb-4">
-              Accounting & Audit Office based in Deira, Dubai — delivering comprehensive financial and business support services for companies across the UAE.
+              {t.footer.description}
             </p>
             <div className="flex items-center gap-2 text-xs text-gray-500">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Currently accepting new clients
+              {t.footer.accepting}
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t.footer.contact}</h4>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li className="flex items-start gap-2">
                 <svg className="w-4 h-4 text-primary mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -46,14 +50,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">{t.footer.quickLinks}</h4>
             <ul className="space-y-2">
               {[
-                { label: "Services", href: "#services" },
-                { label: "Why Us", href: "#why-us" },
-                { label: "About Us", href: "#about" },
-                { label: "Testimonials", href: "#testimonials" },
-                { label: "FAQ", href: "#faq" },
+                { label: t.footer.links.services, href: "#services" },
+                { label: t.footer.links.whyUs, href: "#why-us" },
+                { label: t.footer.links.about, href: "#about" },
+                { label: t.footer.links.testimonials, href: "#testimonials" },
+                { label: t.footer.links.faq, href: "#faq" },
               ].map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="text-gray-400 hover:text-primary transition-colors text-sm">
@@ -66,10 +70,10 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-gray-500 text-xs">
-          <p>© {new Date().getFullYear()} BOKURA Accounting & Bookkeeping L.L.C. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {t.footer.copyright}</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer.privacy}</a>
+            <a href="#" className="hover:text-white transition-colors">{t.footer.terms}</a>
           </div>
         </div>
       </div>

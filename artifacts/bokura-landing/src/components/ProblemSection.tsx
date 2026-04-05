@@ -1,17 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-const problems = [
-  "VAT Filings & FTA Penalties",
-  "Corporate Tax Registration Confusion",
-  "Messy Bookkeeping & Bank Reconciliations",
-  "Non-Compliant Payroll (WPS Issues)",
-  "Missed Deadlines & Financial Blind Spots",
-  "No Clear Reports for Banks or Investors",
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export function ProblemSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { t } = useLanguage();
 
   return (
     <section className="py-16 sm:py-24 relative z-10 overflow-hidden">
@@ -27,21 +20,21 @@ export function ProblemSection() {
                 animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                 transition={{ duration: 0.6 }}
               >
-                <span className="inline-block text-xs sm:text-sm font-semibold text-red-400 uppercase tracking-widest mb-3">The Reality</span>
+                <span className="inline-block text-xs sm:text-sm font-semibold text-red-400 uppercase tracking-widest mb-3">{t.problem.label}</span>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 sm:mb-6 leading-tight">
-                  Is Your Business{" "}
-                  <span className="text-red-400 drop-shadow-[0_0_10px_rgba(248,113,113,0.4)]">Losing Money</span>{" "}
-                  in the Dark?
+                  {t.problem.title1}{" "}
+                  <span className="text-red-400 drop-shadow-[0_0_10px_rgba(248,113,113,0.4)]">{t.problem.titleRed}</span>{" "}
+                  {t.problem.title2}
                 </h2>
                 <p className="text-gray-300 text-sm sm:text-base lg:text-lg leading-relaxed">
-                  UAE's regulatory landscape is shifting fast. Corporate Tax, VAT complexities, WPS payroll obligations, and stringent FTA requirements mean disorganised finances aren't just an inconvenience — they're a costly liability.
+                  {t.problem.subtitle}
                 </p>
               </motion.div>
             </div>
 
-            {/* Right pain points — 2-column grid on sm+ */}
+            {/* Right pain points */}
             <div className="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3">
-              {problems.map((problem, idx) => (
+              {t.problem.items.map((problem, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, x: 20 }}

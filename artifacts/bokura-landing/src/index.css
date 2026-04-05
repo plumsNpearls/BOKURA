@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap');
+
+/* Arabic font fallback for RTL content */
+:lang(ar), [lang="ar"], html[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Inter', system-ui, sans-serif;
+}
+html[dir="rtl"] .font-display {
+  font-family: 'Noto Sans Arabic', system-ui, sans-serif;
+}
 
 @import "tailwindcss";
 @import "tw-animate-css";
