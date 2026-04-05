@@ -21,7 +21,7 @@ export default function Home() {
   const handleOpenModal = () => setModalOpen(true);
 
   return (
-    <div className="min-h-screen bg-black text-foreground font-sans relative overflow-x-hidden selection:bg-primary/30 scanline-overlay">
+    <div className="min-h-screen bg-black text-foreground font-sans relative selection:bg-primary/30 scanline-overlay">
       <ScrollProgressBar />
       <ThreeBackground />
 

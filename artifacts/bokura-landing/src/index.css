@@ -151,8 +151,14 @@ html[dir="rtl"] .font-display {
     @apply border-border;
   }
 
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground selection:bg-primary/30 selection:text-primary-foreground;
+    overflow-x: hidden;
   }
   
   h1, h2, h3, h4, h5, h6 {
