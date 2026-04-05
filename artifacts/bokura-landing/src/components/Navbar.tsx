@@ -76,9 +76,14 @@ export function Navbar({ onOpenModal }: { onOpenModal: () => void }) {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <span className="text-2xl sm:text-3xl font-display font-bold tracking-wider text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.08)] group-hover:drop-shadow-[0_0_14px_rgba(0,212,255,0.35)] transition-all duration-300">
-                BOKURA<span className="text-primary group-hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.9)]">.</span>
-              </span>
+              <div className="flex flex-col leading-none">
+                <span className="text-2xl sm:text-3xl font-display font-bold tracking-wider text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.08)] group-hover:drop-shadow-[0_0_14px_rgba(0,212,255,0.35)] transition-all duration-300">
+                  BOKURA<span className="text-primary group-hover:drop-shadow-[0_0_10px_rgba(0,212,255,0.9)]">.</span>
+                </span>
+                <span className="text-[8px] sm:text-[9px] tracking-[0.18em] text-gray-400 font-medium uppercase mt-0.5">
+                  Accounting & Bookkeeping L.L.C
+                </span>
+              </div>
             </a>
 
             {/* ── Desktop Nav ─────────────────────────────────────── */}
