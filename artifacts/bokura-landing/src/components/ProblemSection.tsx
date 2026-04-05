@@ -39,8 +39,10 @@ export function ProblemSection() {
                   key={idx}
                   initial={{ opacity: 0, x: 20 }}
                   animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
-                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.07 }}
-                  className="flex items-center gap-3 bg-black/40 p-3 sm:p-4 rounded-xl border border-red-500/10"
+                  whileHover={{ scale: 1.03, x: -4 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ duration: 0.5, delay: 0.2 + idx * 0.07, type: "spring", stiffness: 280, damping: 20 }}
+                  className="flex items-center gap-3 bg-black/40 p-3 sm:p-4 rounded-xl border border-red-500/10 hover-red cursor-pointer"
                   data-testid={`item-problem-${idx}`}
                 >
                   <div className="w-7 h-7 rounded-full bg-red-500/20 flex items-center justify-center border border-red-500/30 text-red-400 shrink-0">

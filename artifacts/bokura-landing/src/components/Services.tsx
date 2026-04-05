@@ -42,8 +42,10 @@ export function Services() {
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="liquid-glass p-6 sm:p-7 flex flex-col group"
+              whileHover={{ scale: 1.03, y: -7 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.5, delay: index * 0.08, type: "spring", stiffness: 280, damping: 20 }}
+              className="liquid-glass p-6 sm:p-7 flex flex-col group cursor-pointer"
               data-testid={`card-service-${index}`}
             >
               <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary mb-4 sm:mb-5 shadow-[0_0_15px_rgba(0,212,255,0.15)] group-hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-shadow">

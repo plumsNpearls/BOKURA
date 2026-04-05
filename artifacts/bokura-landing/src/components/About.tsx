@@ -51,8 +51,10 @@ export function About() {
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                transition={{ duration: 0.5, delay: 0.3 + idx * 0.1 }}
-                className="liquid-glass p-5 flex gap-3 items-start"
+                whileHover={{ scale: 1.04, y: -6 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.5, delay: 0.3 + idx * 0.1, type: "spring", stiffness: 280, damping: 20 }}
+                className="liquid-glass p-5 flex gap-3 items-start cursor-pointer"
               >
                 <div className="w-9 h-9 flex items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary shrink-0">
                   {highlightIcons[idx]}
@@ -72,8 +74,10 @@ export function About() {
                 key={idx}
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                transition={{ duration: 0.5, delay: 0.5 + idx * 0.08 }}
-                className="liquid-glass p-4 sm:p-5 text-center"
+                whileHover={{ scale: 1.06, y: -8 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ duration: 0.5, delay: 0.5 + idx * 0.08, type: "spring", stiffness: 300, damping: 18 }}
+                className="liquid-glass p-4 sm:p-5 text-center cursor-pointer"
                 data-testid={`stat-${idx}`}
               >
                 <div className="text-xl sm:text-2xl font-display font-bold text-gradient-cyan mb-1">{stat.value}</div>

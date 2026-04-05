@@ -28,8 +28,10 @@ export function Testimonials() {
               key={idx}
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-              transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="liquid-glass p-6 sm:p-8 flex flex-col justify-between"
+              whileHover={{ scale: 1.03, y: -8 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.6, delay: idx * 0.15, type: "spring", stiffness: 260, damping: 20 }}
+              className="liquid-glass p-6 sm:p-8 flex flex-col justify-between cursor-pointer"
               data-testid={`card-testimonial-${idx}`}
             >
               {/* Stars */}

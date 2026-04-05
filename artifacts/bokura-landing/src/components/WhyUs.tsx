@@ -42,8 +42,10 @@ export function WhyUs() {
               key={idx}
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="liquid-glass p-5 sm:p-6 flex gap-4 items-start"
+              whileHover={{ scale: 1.03, y: -6 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.5, delay: idx * 0.08, type: "spring", stiffness: 280, damping: 20 }}
+              className="liquid-glass-gold p-5 sm:p-6 flex gap-4 items-start cursor-pointer"
               data-testid={`card-benefit-${idx}`}
             >
               <div className="w-10 h-10 flex items-center justify-center rounded-xl border border-secondary/30 bg-secondary/10 text-secondary shrink-0">
