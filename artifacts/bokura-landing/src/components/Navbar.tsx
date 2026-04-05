@@ -36,7 +36,7 @@ export function Navbar({ onOpenModal }: { onOpenModal: () => void }) {
           >
             {/* Logo */}
             <a href="#" className="flex items-center gap-2.5" data-testid="link-logo">
-              <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-full overflow-hidden ring-1 ring-secondary/50 shadow-[0_0_10px_rgba(212,160,23,0.35)] shrink-0">
+              <div className="h-11 w-11 sm:h-12 sm:w-12 rounded-full overflow-hidden ring-1 ring-secondary/50 shadow-[0_0_10px_rgba(212,160,23,0.35)] shrink-0">
                 <img
                   src="/bokura-logo.png"
                   alt="BOKURA Logo"
