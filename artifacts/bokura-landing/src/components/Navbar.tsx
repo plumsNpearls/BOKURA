@@ -100,7 +100,8 @@ export function Navbar({ onOpenModal }: { onOpenModal: () => void }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-[72px] left-3 right-3 z-40 liquid-glass-static rounded-2xl overflow-hidden md:hidden"
+            className="fixed top-[72px] left-3 right-3 z-40 rounded-2xl overflow-hidden md:hidden border border-white/10 shadow-2xl"
+            style={{ background: "rgba(5, 5, 12, 0.97)", backdropFilter: "blur(20px)" }}
           >
             <div className="p-5 flex flex-col gap-1">
               {navLinks.map((link) => (
