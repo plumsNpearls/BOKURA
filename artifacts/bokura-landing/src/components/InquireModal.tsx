@@ -51,7 +51,7 @@ function buildWhatsAppMessage(fields: {
     fields.painPoint,
     ``,
     `─────────────────────`,
-    `_Sent via bokura.ae inquiry form_`,
+    `_Sent via ${window.location.hostname} inquiry form_`,
   ].join("\n");
 }
 
