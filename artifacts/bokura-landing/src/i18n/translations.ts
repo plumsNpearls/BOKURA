@@ -56,6 +56,15 @@ export const translations = {
           title: "Business Consultation Services",
           description: "Expert guidance on business setup, financial planning, budgeting, and process improvement to accelerate your growth.",
         },
+        {
+          title: "Accounts Receivable & Payable",
+          description: "Systematic management of customer invoicing, vendor payments, and reconciliations to keep your cash flow healthy and under control.",
+          highlights: ["Debtor Tracking", "Vendor Payments", "Aging Reports"],
+        },
+        {
+          title: "Audit Support & Preparation",
+          description: "End-to-end assistance in preparing for external audits — organising records, liaising with auditors, and ensuring your books are spotless.",
+        },
       ],
     },
     problem: {
@@ -293,6 +302,15 @@ export const translations = {
         {
           title: "خدمات الاستشارات التجارية",
           description: "توجيه متخصص في تأسيس الأعمال والتخطيط المالي والميزانيات وتحسين العمليات لتسريع نموك.",
+        },
+        {
+          title: "المدينون والدائنون (الذمم المدينة والدائنة)",
+          description: "إدارة منهجية لفواتير العملاء ومدفوعات الموردين والتسويات للحفاظ على تدفقك النقدي صحياً وتحت السيطرة.",
+          highlights: ["تتبع المدينين", "مدفوعات الموردين", "تقارير التقادم"],
+        },
+        {
+          title: "دعم وإعداد عمليات التدقيق",
+          description: "مساعدة شاملة في التحضير للتدقيق الخارجي — تنظيم السجلات، والتواصل مع المدققين، وضمان دقة دفاترك.",
         },
       ],
     },
