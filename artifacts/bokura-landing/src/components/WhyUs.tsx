@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/context/LanguageContext";
+import { containerVariants, itemVariants, headingVariants, EASE_OUT_EXPO } from "@/lib/animations";
 
 const icons = [
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
@@ -18,33 +19,51 @@ export function WhyUs() {
   return (
     <section id="why-us" className="py-16 sm:py-24 relative z-10">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+        <motion.div
+          className="text-center mb-10 sm:mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          <motion.span
+            variants={headingVariants}
+            className="inline-block text-xs sm:text-sm font-semibold text-secondary uppercase tracking-widest mb-3"
           >
-            <span className="inline-block text-xs sm:text-sm font-semibold text-secondary uppercase tracking-widest mb-3">{t.whyUs.label}</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
-              {t.whyUs.title} <span className="text-gradient-gold">{t.whyUs.titleGradient}</span>
-              <br className="sm:hidden" /> {t.whyUs.title2}
-            </h2>
-            <p className="text-gray-400 max-w-xl mx-auto text-base sm:text-lg">
-              {t.whyUs.subtitle}
-            </p>
-          </motion.div>
-        </div>
+            {t.whyUs.label}
+          </motion.span>
+          <motion.h2
+            variants={headingVariants}
+            className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight"
+          >
+            {t.whyUs.title}{" "}
+            <span className="text-gradient-gold">{t.whyUs.titleGradient}</span>
+            <br className="sm:hidden" /> {t.whyUs.title2}
+          </motion.h2>
+          <motion.p
+            variants={headingVariants}
+            className="text-gray-400 max-w-xl mx-auto text-base sm:text-lg"
+          >
+            {t.whyUs.subtitle}
+          </motion.p>
+        </motion.div>
 
-        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           {t.whyUs.items.map((benefit, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 24 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-              whileHover={{ scale: 1.03, y: -6 }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.04, y: -7, transition: { duration: 0.28, ease: EASE_OUT_EXPO } }}
               whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.5, delay: idx * 0.08, type: "spring", stiffness: 280, damping: 20 }}
               className="liquid-glass-gold p-5 sm:p-6 flex gap-4 items-start cursor-pointer"
               data-testid={`card-benefit-${idx}`}
             >
@@ -57,7 +76,7 @@ export function WhyUs() {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

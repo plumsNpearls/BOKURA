@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/context/LanguageContext";
+import { containerVariants, itemVariants, headingVariants, fadeUpVariants, EASE_OUT_EXPO } from "@/lib/animations";
 
 const highlightIcons = [
   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>,
@@ -9,31 +10,35 @@ const highlightIcons = [
 ];
 
 export function About() {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.08 });
   const { t } = useLanguage();
 
   return (
     <section id="about" className="py-16 sm:py-24 relative z-10">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <div ref={ref} className="max-w-5xl mx-auto">
+          {/* Heading */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.7 }}
             className="text-center mb-8 sm:mb-12"
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
           >
-            <span className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-3">{t.about.label}</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
+            <motion.span variants={headingVariants} className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-3">
+              {t.about.label}
+            </motion.span>
+            <motion.h2 variants={headingVariants} className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4 leading-tight">
               {t.about.title}{" "}
               <span className="text-gradient-cyan">{t.about.titleGradient}</span>
-            </h2>
+            </motion.h2>
           </motion.div>
 
-          {/* Main description */}
+          {/* Main description card */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={fadeUpVariants}
+            transition={{ delay: 0.15 }}
             className="liquid-glass-static p-6 sm:p-8 md:p-10 relative overflow-hidden rounded-2xl mb-6"
           >
             <div className="absolute top-0 right-0 w-48 sm:w-64 h-48 sm:h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
@@ -44,16 +49,19 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Highlight cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          {/* Highlight cards — stagger */}
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6"
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={containerVariants}
+          >
             {t.about.highlights.map((item, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                whileHover={{ scale: 1.04, y: -6 }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -7, transition: { duration: 0.28, ease: EASE_OUT_EXPO } }}
                 whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.5, delay: 0.3 + idx * 0.1, type: "spring", stiffness: 280, damping: 20 }}
                 className="liquid-glass p-5 flex gap-3 items-start cursor-pointer"
               >
                 <div className="w-9 h-9 flex items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary shrink-0">
@@ -65,18 +73,21 @@ export function About() {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          {/* Stats row — stagger */}
+          <motion.div
+            className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.07, delayChildren: 0.2 } } }}
+          >
             {t.about.stats.map((stat, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 16 }}
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }}
-                whileHover={{ scale: 1.06, y: -8 }}
+                variants={itemVariants}
+                whileHover={{ scale: 1.07, y: -8, transition: { duration: 0.28, ease: EASE_OUT_EXPO } }}
                 whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.5, delay: 0.5 + idx * 0.08, type: "spring", stiffness: 300, damping: 18 }}
                 className="liquid-glass p-4 sm:p-5 text-center cursor-pointer"
                 data-testid={`stat-${idx}`}
               >
@@ -84,7 +95,7 @@ export function About() {
                 <div className="text-gray-400 text-xs sm:text-sm">{stat.label}</div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

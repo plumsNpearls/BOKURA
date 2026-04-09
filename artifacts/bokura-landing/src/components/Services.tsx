@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLanguage } from "@/context/LanguageContext";
+import { containerVariants, itemVariants, headingVariants, EASE_OUT_EXPO } from "@/lib/animations";
 
 const icons = [
   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>,
@@ -19,32 +20,50 @@ export function Services() {
   return (
     <section id="services" className="py-16 sm:py-24 relative z-10">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+        <motion.div
+          className="text-center mb-10 sm:mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.1 } },
+          }}
+        >
+          <motion.span
+            variants={headingVariants}
+            className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-3"
           >
-            <span className="inline-block text-xs sm:text-sm font-semibold text-primary uppercase tracking-widest mb-3">{t.services.label}</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4">
-              {t.services.title} <span className="text-gradient-cyan">{t.services.titleGradient}</span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-              {t.services.subtitle}
-            </p>
-          </motion.div>
-        </div>
+            {t.services.label}
+          </motion.span>
+          <motion.h2
+            variants={headingVariants}
+            className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-4"
+          >
+            {t.services.title}{" "}
+            <span className="text-gradient-cyan">{t.services.titleGradient}</span>
+          </motion.h2>
+          <motion.p
+            variants={headingVariants}
+            className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg"
+          >
+            {t.services.subtitle}
+          </motion.p>
+        </motion.div>
 
-        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           {t.services.items.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              whileHover={{ scale: 1.03, y: -7 }}
+              variants={itemVariants}
+              whileHover={{ scale: 1.04, y: -8, transition: { duration: 0.28, ease: EASE_OUT_EXPO } }}
               whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.5, delay: index * 0.08, type: "spring", stiffness: 280, damping: 20 }}
               className="liquid-glass p-6 sm:p-7 flex flex-col group cursor-pointer"
               data-testid={`card-service-${index}`}
             >
@@ -64,7 +83,7 @@ export function Services() {
               )}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
