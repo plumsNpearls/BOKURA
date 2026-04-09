@@ -14,6 +14,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { InquireModal } from "@/components/InquireModal";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
 import { SectionReveal } from "@/components/SectionReveal";
+import { CustomCursor } from "@/components/CustomCursor";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-foreground font-sans relative selection:bg-primary/30 scanline-overlay">
+      <CustomCursor />
       <ScrollProgressBar />
       <ThreeBackground />
 
