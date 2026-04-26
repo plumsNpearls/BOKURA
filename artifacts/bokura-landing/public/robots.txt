@@ -2,6 +2,6 @@ User-agent: *
 Allow: /
 
 # Sitemap — submit to Google Search Console & Bing Webmaster Tools
-Sitemap: https://attached-assets-techedubyte.replit.app/sitemap.xml
+Sitemap: https://bokura.org/sitemap.xml
 
 Crawl-delay: 1
