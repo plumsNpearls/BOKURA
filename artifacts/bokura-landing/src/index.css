@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap');
+/* Build trigger: Verifying latest SEO and AEO configuration */
 
 /* Arabic font fallback for RTL content */
 :lang(ar), [lang="ar"], html[dir="rtl"] {
