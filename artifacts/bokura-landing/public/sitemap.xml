@@ -5,14 +5,19 @@
 
   <url>
     <loc>https://bokura.org/</loc>
-    <lastmod>2026-04-26</lastmod>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-ae" href="https://bokura.org/"/>
     <xhtml:link rel="alternate" hreflang="ar-ae" href="https://bokura.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bokura.org/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://bokura.org/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://bokura.org/"/>
     <image:image>
       <image:loc>https://bokura.org/bokura-logo.png</image:loc>
       <image:title>BOKURA Accounting and Bookkeeping L.L.C — Deira, Dubai UAE</image:title>
-      <image:caption>BOKURA — Full-service accounting, VAT filing, corporate tax &amp; bookkeeping office in Deira, Dubai</image:caption>
+      <image:caption>BOKURA — Premier accounting office in Deira, Dubai providing VAT filing, corporate tax, and bookkeeping services across the UAE and GCC.</image:caption>
+      <image:geo_location>Dubai, United Arab Emirates</image:geo_location>
     </image:image>
   </url>
 

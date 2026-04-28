@@ -1,0 +1,32 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "bokura.vercel.app"
+        }
+      ],
+      "destination": "https://bokura.org/$1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(.+)\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
+      ]
+    }
+  ]
+}

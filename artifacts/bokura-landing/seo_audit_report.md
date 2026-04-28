@@ -14,11 +14,36 @@ The current implementation has a very strong technical foundation, hitting many 
 ### B. AI Engine Optimization (AEO) & Schema Markup
 - **Extensive JSON-LD**: You have implemented 7 different schemas (LocalBusiness, Organization, WebPage, WebSite, BreadcrumbList, and dual FAQPages).
 - **FAQ Schema**: The bilingual FAQ schema is the **#1 driver for AI citations** (ChatGPT, Perplexity, Google AI Overviews). Structuring questions like "What is the UAE Corporate Tax rate..." makes this content highly extractable by LLMs.
-- **Service Catalog**: Your `AccountingService` schema includes a detailed `hasOfferCatalog`, explicitly listing services like "Corporate Tax Registration & Filing UAE 2025" to search engines in machine-readable format.
+- **Service Catalog**: Your `AccountingService` schema includes a detailed `hasOfferCatalog`, explicitly listing services like "Corporate Tax Registration & Filing UAE 2026" to search engines in machine-readable format.
 
 ### C. Technical SEO Basics
 - **Open Graph & Twitter Cards**: Fully implemented for rich social sharing on LinkedIn, WhatsApp, etc.
 - **Performance**: Preconnecting to Google Fonts (`<link rel="preconnect"...>`) helps improve Core Web Vitals (specifically LCP).
+
+---
+
+---
+
+## 🛑 4. CRITICAL: Resolving Vercel Staging Indexing (`bokura.vercel.app`)
+
+> [!CAUTION]
+> You mentioned that `https://bokura.vercel.app` is still showing up in Google search results. This is a common issue where Google indexes the default Vercel deployment domain instead of your custom domain (`bokura.org`).
+
+### Why this is happening:
+1.  **Early Discovery**: Google likely crawled the `.vercel.app` URL before the custom domain was fully configured or before the `canonical` tags were implemented.
+2.  **Duplicate Content**: Without explicit instructions, Google sees two identical sites and may choose to show the one it "trusts" more based on crawl history.
+
+### How to Fix It (Code & Configuration):
+
+#### 1. Robust Canonical Tags (Already Implemented)
+We have already ensured that the `<link rel="canonical" href="https://bokura.org/" />` is present in `index.html`. This tells Google that even if it finds the content on Vercel, `bokura.org` is the "source of truth."
+*   **Next Step**: Wait for Google to re-crawl. You can speed this up by using the "URL Inspection Tool" in Google Search Console for the Vercel URL and requesting a re-index.
+
+#### 2. Vercel Redirects (Recommended)
+You should add a `vercel.json` file to the root of your project to force a 301 redirect from the Vercel domain to your main domain. This is the **most effective** fix.
+
+#### 3. X-Robots-Tag (Advanced)
+If you want to keep the Vercel URL accessible but hidden from search, you can configure Vercel to send an `X-Robots-Tag: noindex` header for all domains EXCEPT `bokura.org`.
 
 ---
 

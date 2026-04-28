@@ -36,8 +36,8 @@ export const translations = {
           description: "Preparation and timely submission of VAT returns in full compliance with FTA regulations — zero penalties, zero stress.",
         },
         {
-          title: "Corporate Tax Services",
-          description: "Corporate tax registration, filing, advisory, and ongoing compliance support to keep your business fully aligned with UAE tax law.",
+          title: "Corporate Tax Services (2026)",
+          description: "End-to-end Corporate Tax registration, computation, and return filing. We ensure your business is fully aligned with UAE Corporate Tax Law (2026) and eligible for all reliefs.",
         },
         {
           title: "Financial Reports & Project Reports",
@@ -111,7 +111,7 @@ export const translations = {
         },
         {
           title: "Flexible Meetings & Transparent Pricing",
-          desc: "We work around your schedule with in-person or remote sessions. No hidden fees — clear, predictable pricing always.",
+          desc: "We work around your schedule with in-person or remote sessions. Affordable, flat-rate pricing with no hidden costs for UAE startups and SMEs.",
         },
       ],
     },
