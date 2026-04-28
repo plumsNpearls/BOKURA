@@ -119,8 +119,13 @@ export function InquireModal({ open, onOpenChange }: { open: boolean; onOpenChan
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="liquid-glass-static border-primary/30 sm:max-w-[600px] p-0 overflow-hidden">
-        <div className="p-4 sm:p-6 lg:p-7">
+      <DialogContent className="liquid-glass-static border-primary/30 sm:max-w-[600px] p-0 overflow-hidden bg-black/40">
+        {/* Decorative Background Layers */}
+        <div className="absolute inset-0 mesh-gradient opacity-40 z-0" />
+        <div className="absolute inset-0 glass-reflection z-0" />
+        <div className="absolute inset-0 noise-overlay z-0" />
+        
+        <div className="relative z-10 p-4 sm:p-6 lg:p-7">
           <DialogHeader className="mb-3 sm:mb-4">
             <DialogTitle className="text-lg sm:text-2xl font-display text-white">{t.modal.title}</DialogTitle>
             <DialogDescription className="text-gray-400 text-[11px] sm:text-sm leading-tight">{t.modal.subtitle}</DialogDescription>
