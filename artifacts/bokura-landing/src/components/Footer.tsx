@@ -9,11 +9,15 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
           <div className="sm:col-span-2">
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-12 w-12 rounded-full overflow-hidden ring-1 ring-secondary/50 shadow-[0_0_12px_rgba(212,160,23,0.4)] shrink-0">
+              <div className="h-12 w-12 rounded-full overflow-hidden ring-1 ring-secondary/50 shadow-[0_0_12px_rgba(212,160,23,0.4)] shrink-0 bg-black/40 relative">
+                {/* Background placeholder */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
                 <img
                   src="/bokura-logo.png"
                   alt="BOKURA Logo"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover relative z-10"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <span className="text-2xl sm:text-3xl font-display font-bold tracking-wider text-white">

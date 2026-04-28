@@ -71,11 +71,16 @@ export function Navbar({ onOpenModal }: { onOpenModal: () => void }) {
 
             {/* ── Logo ────────────────────────────────────────────── */}
             <a href="#" className="relative z-20 flex items-center gap-3 sm:gap-4 group" data-testid="link-logo">
-              <div className="logo-ring-animated h-14 w-14 sm:h-16 sm:w-16 rounded-full overflow-hidden ring-2 ring-secondary/60 shrink-0 transition-transform duration-300 group-hover:scale-105">
+              <div className="logo-ring-animated h-14 w-14 sm:h-16 sm:w-16 rounded-full overflow-hidden ring-2 ring-secondary/60 shrink-0 transition-transform duration-300 group-hover:scale-105 bg-black/40 relative">
+                {/* Background placeholder/shimmer while loading */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 animate-pulse" />
                 <img
                   src="/bokura-logo.png"
                   alt="BOKURA Logo"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover relative z-10"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                 />
               </div>
               <div className="flex flex-col items-center leading-none">
