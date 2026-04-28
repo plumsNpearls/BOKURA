@@ -6,7 +6,6 @@ export const translations = {
       services: "Services",
       whyUs: "Why Us",
       about: "About",
-      testimonials: "Testimonials",
       faq: "FAQ",
       inquire: "Inquire Now",
       inquireFree: "Inquire Now — It's Free",
@@ -142,28 +141,6 @@ export const translations = {
         },
       ],
     },
-    testimonials: {
-      label: "Client Stories",
-      title: "Trusted by",
-      titleGradient: "Industry Leaders",
-      items: [
-        {
-          quote: "BOKURA entirely transformed our financial operations. They navigated the FTA requirements seamlessly, giving us total peace of mind.",
-          name: "Ahmed Al Mansoori",
-          role: "CEO, Mainland LLC",
-        },
-        {
-          quote: "As a fast-growing tech startup, we needed a firm that understood modern business. BOKURA acts like our in-house CFO.",
-          name: "Sarah Jenkins",
-          role: "Founder, Tech FZCO",
-        },
-        {
-          quote: "Their precision in reconciling our multi-currency accounts is unmatched. The finest bookkeeping service in the GCC, hands down.",
-          name: "Tariq Rashid",
-          role: "Director, Retail Group",
-        },
-      ],
-    },
     faq: {
       label: "FAQ",
       title: "Frequently Asked",
@@ -218,7 +195,6 @@ export const translations = {
         services: "Services",
         whyUs: "Why Us",
         about: "About Us",
-        testimonials: "Testimonials",
         faq: "FAQ",
       },
       copyright: "BOKURA Accounting & Bookkeeping L.L.C. All rights reserved.",
@@ -253,7 +229,6 @@ export const translations = {
       services: "الخدمات",
       whyUs: "لماذا نحن",
       about: "من نحن",
-      testimonials: "آراء العملاء",
       faq: "الأسئلة الشائعة",
       inquire: "تواصل الآن",
       inquireFree: "تواصل الآن — مجاناً",
@@ -389,28 +364,6 @@ export const translations = {
         },
       ],
     },
-    testimonials: {
-      label: "قصص العملاء",
-      title: "ثقة",
-      titleGradient: "رواد الصناعة",
-      items: [
-        {
-          quote: "غيّرت بوكورا عملياتنا المالية كلياً. تعاملوا مع متطلبات هيئة الضرائب بسلاسة تامة، ومنحونا راحة بال كاملة.",
-          name: "أحمد المنصوري",
-          role: "الرئيس التنفيذي، شركة ذات مسؤولية محدودة",
-        },
-        {
-          quote: "بوصفنا شركة ناشئة تقنية سريعة النمو، احتجنا إلى شريك يفهم متطلبات الأعمال الحديثة. بوكورا تعمل كمدير مالي داخلي لدينا.",
-          name: "سارة جنكينز",
-          role: "المؤسسة، شركة تقنية في المنطقة الحرة",
-        },
-        {
-          quote: "دقتهم في تسوية حساباتنا متعددة العملات لا مثيل لها. أفضل خدمة محاسبة في منطقة الخليج بلا منازع.",
-          name: "طارق رشيد",
-          role: "المدير، مجموعة تجزئة",
-        },
-      ],
-    },
     faq: {
       label: "الأسئلة الشائعة",
       title: "الأسئلة",
@@ -465,7 +418,6 @@ export const translations = {
         services: "الخدمات",
         whyUs: "لماذا نحن",
         about: "من نحن",
-        testimonials: "آراء العملاء",
         faq: "الأسئلة الشائعة",
       },
       copyright: "بوكورا للمحاسبة والمراجعة ش.ذ.م.م. جميع الحقوق محفوظة.",

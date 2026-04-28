@@ -58,7 +58,6 @@ export function Footer() {
                 { label: t.footer.links.services, href: "#services" },
                 { label: t.footer.links.whyUs, href: "#why-us" },
                 { label: t.footer.links.about, href: "#about" },
-                { label: t.footer.links.testimonials, href: "#testimonials" },
                 { label: t.footer.links.faq, href: "#faq" },
               ].map((link) => (
                 <li key={link.href}>
