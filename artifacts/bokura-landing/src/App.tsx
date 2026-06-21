@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { LenisProvider } from "@/lib/LenisProvider";
+import { Analytics } from "@vercel/analytics/react";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ function App() {
               <Router />
             </WouterRouter>
             <Toaster />
+            <Analytics />
           </TooltipProvider>
         </QueryClientProvider>
       </LanguageProvider>
